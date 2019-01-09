@@ -1,0 +1,11 @@
+kind: Service
+apiVersion: apps/v1
+metadata:
+  name: k8stb.mysql-service
+spec:
+  selector:
+    app: k8stb.mysql
+  ports:
+  - protocol: TCP
+    port: 3306
+    targetPort: 3306

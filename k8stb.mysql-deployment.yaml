@@ -1,0 +1,18 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: k8stb.mysql-deployment
+spec:
+  selector:
+    matchLabels:
+      app: k8stb.mysql
+  template:
+    metadata:
+      labels:
+        app: k8stb.mysql
+    spec:
+      containers:
+      - name: database
+        image: changyuan/k8stb.mysql
+        ports:
+        - containerPort: 3306
